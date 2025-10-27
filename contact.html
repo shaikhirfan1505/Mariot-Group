@@ -64,75 +64,47 @@
 
 
 
- <!-- ABOUT -->
-<section id="about">
-  <div class="container about-container">
-    <h2 class="section-title">About Us</h2>
-    <div class="about-content">
-      <div class="about-image">
-        <img src="Mariot About.png" alt="About Mariot Kitchen" />
-      </div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">Contact Us</h2>
+        <div class="contact-grid">
+          <form id="contact-form" aria-label="Contact form" onsubmit="handleContact(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
 
-      <div class="about-text">
-        <p>
-          Mariot Kitchen Equipment provides turnkey commercial kitchen design, supply and installation
-          across Dubai, Sharjah and the UAE. With over 18 years of industry experience, we partner with
-          leading manufacturers to deliver stainless steel fabrication, refrigeration, bakery lines,
-          coffee equipment and full project management for hotels, restaurants and catering operations.
-        </p>
+            <label for="company">Company</label>
+            <input id="company" name="company" />
 
-        <ul class="about-features">
-          <li>
-            <strong>Turnkey Projects</strong><br>
-            <small>Design → Supply → Install</small>
-          </li>
-          <li>
-            <strong>After Sales</strong><br>
-            <small>Service & Spare Parts</small>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
 
-<!-- WHO WE ARE SECTION -->
-<section id="who-we-are">
-  <div class="container">
-    <h2 class="section-title center">Who We Are</h2>
-    <div class="who-grid">
-      <div class="who-text">
-        <p>
-          Mariot Kitchen Equipment is a leading supplier of premium commercial kitchen and catering solutions in the UAE. With over 18 years of experience, we deliver turnkey projects from design, supply, to installation, ensuring quality and efficiency for hotels, restaurants, and cafés.
-        </p>
-        <p>
-          Our team of experts works closely with clients to understand their unique requirements, providing tailored solutions backed by industry-leading brands and exceptional service.
-        </p>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required />
 
-        <div class="choose-grid">
-          <div class="choose-item">
-            <strong>Expertise & Experience</strong>
-            <p>Over 18 years of industry experience delivering turnkey kitchen solutions across the UAE.</p>
-          </div>
-          <div class="choose-item">
-            <strong>Trusted Brands</strong>
-            <p>We partner with premium manufacturers to provide top-quality equipment and long-term reliability.</p>
-          </div>
-          <div class="choose-item">
-            <strong>Comprehensive Service</strong>
-            <p>From design to after-sales support, we provide full project management, installation, and training.</p>
-          </div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div style="display:flex;gap:10px;margin-top:12px">
+              <button class="btn" type="submit">Send Enquiry</button>
+              <a class="btn secondary" href="https://wa.me/971524852401">Chat on WhatsApp</a>
+            </div>
+          </form>
+
+          <aside style="display:flex;flex-direction:column;gap:12px">
+            <div style="background:white;padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(33,36,39,0.04)">
+              <strong>Head Office — Dubai</strong>
+              <p style="margin:6px 0;color:var(--muted);font-family:'Cairo',sans-serif">Showroom & Service Centre<br>PO Box 0000, Dubai, UAE<br>Phone: +971 4 000 0000</p>
+            </div>
+
+            <div style="background:white;padding:8px;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(33,36,39,0.04)">
+              <!-- Embedded map placeholder; replace src with production Google Maps embed -->
+              <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.0!2d55.0!3d25.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAwJzAwLjAiTiA1NcKwMDAnMDAuMCJF!5e0!3m2!1sen!2s!4v0000000000000" width="100%" height="200" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </aside>
         </div>
       </div>
-
-      <div class="who-image">
-        <img src="Mariot why us.png" alt="Who We Are Mariot Kitchen">
-        <p>Our team of experts works closely with clients to understand their unique requirements, providing tailored solutions backed by industry-leading brands and exceptional service.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
 
 
