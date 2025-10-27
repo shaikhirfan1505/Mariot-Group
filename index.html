@@ -37,7 +37,7 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:120;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(33,36,39,0.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;}
     .brand{display:flex;align-items:center;gap:14px}
     .logo{display:flex;flex-direction:column}
     .logo h1{margin:0;font-size:18px;letter-spacing:0.4px;font-weight:700}
@@ -49,6 +49,46 @@
     .btn.secondary{background:transparent;color:var(--charcoal);border:1px solid #e6e6e6}
     .btn:active{transform:translateY(1px)}
     .whatsapp-btn{background:linear-gradient(90deg,#28a745,#2ecc71);padding:9px 12px;border-radius:10px;color:white;display:inline-flex;gap:8px;align-items:center}
+.mobile-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: top 0.4s ease;
+  z-index: 10000;
+  padding: 60px 0 20px;
+  text-align: center;
+  visibility: hidden; /* ✅ hidden by default */
+  opacity: 0;
+}
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mobile-menu li {
+  margin: 14px 0;
+}
+.mobile-menu a {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+  transition: color 0.3s ease;
+}
+.mobile-menu a:hover {
+  color: var(--accent);
+}
+
+/* ✅ When menu is active */
+.mobile-menu.show {
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
 
     /* Hero */
     .hero{min-height:66vh;display:grid;align-items:center;padding:48px 0}
@@ -57,7 +97,182 @@
     .hero-sub{margin-top:10px;color:var(--muted);font-family:'Cairo',sans-serif}
     .hero-ctas{margin-top:22px;display:flex;gap:12px}
     .hero-media{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(33,36,39,0.08)}
-    .media-inner{height:360px;background:#111;background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center}
+    .media-inner{height:360px;background:#111;background-image:url('Mariot header.jpeg');background-size:cover;background-position:right}
+
+    /* ABOUT SECTION */
+#about {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+#about .section-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: var(--heading, #222);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.about-text p {
+  font-family: 'Cairo', sans-serif;
+  color: var(--muted, #555);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.about-features li {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(33, 36, 39, 0.06);
+  font-family: 'Cairo', sans-serif;
+}
+
+.about-features small {
+  color: var(--muted, #777);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+}
+
+
+/* WHO WE ARE SECTION */
+#who-we-are {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+#who-we-are .section-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: var(--heading, #222);
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.who-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.who-text p {
+  font-family: 'Cairo', sans-serif;
+  color: var(--muted, #555);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.choose-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(33,36,39,0.04);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.choose-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(33,36,39,0.08);
+}
+
+.choose-item strong {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.choose-item p {
+  font-family: 'Cairo', sans-serif;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .who-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .choose-grid {
+    grid-template-columns: 1fr;
+  }
+  .who-text {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  #who-we-are {
+    padding: 60px 20px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .choose-item {
+    padding: 16px;
+  }
+}
+
 
     /* Stats */
     .stats{display:flex;gap:18px;margin-top:20px}
@@ -68,13 +283,97 @@
     /* Sections */
     section{padding:48px 0}
     h2.section-title{font-size:22px;margin:0 0 18px 0}
+/* Product categories slider */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
 
-    /* Product categories grid */
-    .grid{display:grid;gap:18px}
-    .card{background:white;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 28px rgba(33,36,39,0.04);transition:transform var(--transition),box-shadow var(--transition)}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 48px rgba(33,36,39,0.08)}
-    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-    .card h4{margin:0}
+.slider-track {
+  display: flex;
+  gap: 18px;
+  transition: transform 0.4s ease;
+}
+
+/* Show exactly 3 cards at a time on desktop */
+.slider-track .card {
+  flex: 0 0 calc((100% - 36px) / 3); /* 3 cards with 2 gaps of 18px */
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+}
+
+.slider-btn.prev {
+  left: 0;
+}
+
+.slider-btn.next {
+  right: 0;
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 28px rgba(33,36,39,0.04);
+  transition: transform var(--transition), box-shadow var(--transition);
+  align-items: center; /* center content inside card */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(33,36,39,0.08);
+}
+
+.card img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h4 {
+  margin: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  /* 2 cards on tablet */
+  .slider-track .card {
+    flex: 0 0 calc((100% - 18px) / 2); /* 2 cards with 1 gap */
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1 card on mobile */
+  .slider-track .card {
+    flex: 0 0 100%;
+  }
+
+  .slider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+
 
     /* Projects */
     .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -99,56 +398,205 @@
     .footer-grid{display:grid;grid-template-columns:1fr 1fr 240px;gap:18px}
 
     /* WhatsApp floating */
-    .floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:140;display:flex;flex-direction:column;gap:10px}
-    .floating-whatsapp a{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;box-shadow:0 10px 30px rgba(33,36,39,0.14);font-weight:700}
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;  /* distance from bottom */
+  right: 20px;   /* moved to right */
+  width: 50px;
+  height: 50px;
+  z-index: 9999; /* very high so it stays on top */
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #25D366;
+  transition: transform 0.2s;
+  touch-action: manipulation; /* improves mobile touch */
+}
 
-    /* Responsive */
-    @media (max-width:1100px){
-      .hero-grid{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
-      .projects{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:640px){
-      nav ul{display:none}
-      .nav{padding:12px}
-      .hero{padding:28px 0}
-      .hero-title{font-size:26px}
-      .projects{grid-template-columns:1fr}
-      .stats{flex-direction:column}
-    }
+#whatsapp-button img {
+  width: 70%;
+  height: 70%;
+}
+
+#whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+/* Optional: slightly bigger on mobile for easier tap */
+@media (max-width: 768px) {
+  #whatsapp-button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Responsive */
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .projects{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  nav ul{display:none}
+  .nav{padding:12px}
+  .hero{padding:28px 0}
+  .hero-title{font-size:26px}
+  .projects{grid-template-columns:1fr}
+  .stats{flex-direction:column}
+}
+
 
     /* Small helpers & animations */
     .fade-up{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
     .fade-up.in{opacity:1;transform:none}
+
+/* 📱 Responsive Design Tweaks */
+
+/* Tablets */
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-media {
+    order: -1; /* image/video above text */
+    height: 300px;
+  }
+  .hero-title {
+    font-size: 30px;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    gap: 12px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 15px;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 0;
+  }
+
+  nav ul {
+    display: none; /* hide desktop menu */
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  footer {
+    padding: 36px 16px;
+  }
+
+  #whatsapp-button {
+    width: 60px;
+    height: 60px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+
+
   </style>
 </head>
 <body>
   <header role="banner" aria-label="Main header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <h1>Mariot Kitchen</h1>
-          
-        </div>
-      </div>
-
-      <nav role="navigation" aria-label="Primary navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="cta">
-        <a class="whatsapp-btn" href="https://wa.me/971524852401" aria-label="WhatsApp now">📱 WhatsApp</a>
-        <button class="btn" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <h1>Mariot Kitchen</h1>
       </div>
     </div>
-  </header>
+
+    <nav role="navigation" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ✅ HAMBURGER BUTTON -->
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="cta">
+      <button class="btn" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+    </div>
+  </div>
+
+  <!-- ✅ MOBILE MENU (HIDDEN INITIALLY) -->
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <ul>
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#products" onclick="closeMenu()">Products</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
 
   <!-- HERO -->
   <main id="home">
@@ -186,98 +634,148 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Us</h2>
-        <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start">
-          <div>
-            <p style="color:var(--muted);font-family:'Cairo',sans-serif;line-height:1.6">Mariot Kitchen Equipment provides turnkey commercial kitchen design, supply and installation across Dubai, Sharjah and the UAE. With over 18 years of industry experience, we partner with leading manufacturers to deliver stainless steel fabrication, refrigeration, bakery lines, coffee equipment and full project management for hotels, restaurants and catering operations.</p>
+<section id="about">
+  <div class="container about-container">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="Mariot About.png" alt="About Mariot Kitchen" />
+      </div>
 
-            <ul style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px">
-              <li style="background:white;padding:12px;border-radius:10px;box-shadow:0 8px 20px rgba(33,36,39,0.04)"><strong>Turnkey Projects</strong><br><small style="color:var(--muted);font-family:'Cairo',sans-serif">Design → Supply → Install</small></li>
-              <li style="background:white;padding:12px;border-radius:10px;box-shadow:0 8px 20px rgba(33,36,39,0.04)"><strong>After Sales</strong><br><small style="color:var(--muted);font-family:'Cairo',sans-serif">Service & Spare Parts</small></li>
-            </ul>
+      <div class="about-text">
+        <p>
+          Mariot Kitchen Equipment provides turnkey commercial kitchen design, supply and installation
+          across Dubai, Sharjah and the UAE. With over 18 years of industry experience, we partner with
+          leading manufacturers to deliver stainless steel fabrication, refrigeration, bakery lines,
+          coffee equipment and full project management for hotels, restaurants and catering operations.
+        </p>
 
+        <ul class="about-features">
+          <li>
+            <strong>Turnkey Projects</strong><br>
+            <small>Design → Supply → Install</small>
+          </li>
+          <li>
+            <strong>After Sales</strong><br>
+            <small>Service & Spare Parts</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE SECTION -->
+<section id="who-we-are">
+  <div class="container">
+    <h2 class="section-title center">Who We Are</h2>
+    <div class="who-grid">
+      <div class="who-image">
+        <img src="Mariot Who We Are.png" alt="Who We Are Mariot Kitchen">
+      </div>
+      <div class="who-text">
+        <p>
+          Mariot Kitchen Equipment is a leading supplier of premium commercial kitchen and catering solutions in the UAE. With over 18 years of experience, we deliver turnkey projects from design, supply, to installation, ensuring quality and efficiency for hotels, restaurants, and cafés.
+        </p>
+        <p>
+          Our team of experts works closely with clients to understand their unique requirements, providing tailored solutions backed by industry-leading brands and exceptional service.
+        </p>
+
+        <div class="choose-grid">
+          <div class="choose-item">
+            <strong>Expertise & Experience</strong>
+            <p>Over 18 years of industry experience delivering turnkey kitchen solutions across the UAE.</p>
           </div>
-
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <img src="https://images.unsplash.com/photo-1555992336-03a23c0ff12b?q=80&w=900&auto=format&fit=crop" alt="Showroom or team" style="width:100%;border-radius:12px;object-fit:cover">
-            <img src="https://images.unsplash.com/photo-1541542684-1d8a9b0b9a52?q=80&w=900&auto=format&fit=crop" alt="Installation" style="width:100%;border-radius:12px;object-fit:cover">
+          <div class="choose-item">
+            <strong>Trusted Brands</strong>
+            <p>We partner with premium manufacturers to provide top-quality equipment and long-term reliability.</p>
+          </div>
+          <div class="choose-item">
+            <strong>Comprehensive Service</strong>
+            <p>From design to after-sales support, we provide full project management, installation, and training.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+
+
+
 
     <!-- PRODUCT CATEGORIES -->
-    <section id="products">
-      <div class="container">
-        <h2 class="section-title">Product Categories</h2>
-        <div class="grid" style="grid-template-columns:repeat(4,1fr);">
+<section id="products">
+  <div class="container">
+    <h2 class="section-title">Product Categories</h2>
+    
+    <div class="slider-wrapper">
+      <button class="slider-btn prev">&#10094;</button>
+      <div class="slider-track">
+        <article class="card" role="article" aria-labelledby="pc1">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Food processing equipment">
+          <h4 id="pc1">Food Processing</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Industrial mixers, slicers, blenders and prep equipment.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-          <article class="card" role="article" aria-labelledby="pc1">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Food processing equipment">
-            <h4 id="pc1">Food Processing</h4>
-            <p style="color:var(--muted);font-family:'Cairo',sans-serif">Industrial mixers, slicers, blenders and prep equipment.</p>
-            <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
-          </article>
+        <article class="card" role="article" aria-labelledby="pc2">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Bakery line">
+          <h4 id="pc2">Bakery Line</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Proofers, ovens, racks and dough handling systems.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-          <article class="card" role="article" aria-labelledby="pc2">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Bakery line">
-            <h4 id="pc2">Bakery Line</h4>
-            <p style="color:var(--muted);font-family:'Cairo',sans-serif">Proofers, ovens, racks and dough handling systems.</p>
-            <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
-          </article>
+        <article class="card" role="article" aria-labelledby="pc3">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="Refrigeration">
+          <h4 id="pc3">Refrigeration Line</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Walk-in coolers, display cases and blast chillers.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-          <article class="card" role="article" aria-labelledby="pc3">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="Refrigeration">
-            <h4 id="pc3">Refrigeration</h4>
-            <p style="color:var(--muted);font-family:'Cairo',sans-serif">Walk-in coolers, display cases and blast chillers.</p>
-            <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
-          </article>
+        <article class="card" role="article" aria-labelledby="pc4">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Coffee machines & beverage equipment">
+          <h4 id="pc4">Coffee & Bar Line</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Commercial espresso machines, grinders, and beverage systems.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-          <article class="card" role="article" aria-labelledby="pc4">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1521305916504-4a1121188589?q=80&w=1200&auto=format&fit=crop" alt="Coffee machines & beverage equipment">
-            <h4 id="pc4">Coffee & Beverage</h4>
-            <p style="color:var(--muted);font-family:'Cairo',sans-serif">Commercial espresso machines, grinders, and beverage systems.</p>
-            <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
-          </article>
+        <article class="card" role="article" aria-labelledby="pc5">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Dry store equipment">
+          <h4 id="pc5">Dry Store</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Shelving, storage solutions, and packing machines.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-        </div>
+        <article class="card" role="article" aria-labelledby="pc6">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Laundry and dishwasher equipment">
+          <h4 id="pc6">Laundry & Dishwasher</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Commercial washers, dryers, and dishwashing machines.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-        <!-- product detail (template) -->
-        <div style="margin-top:30px">
-          <h3 style="margin-bottom:10px">Product Detail — Template</h3>
-          <div class="card" style="display:flex;gap:18px;flex-wrap:wrap">
-            <div style="flex:1 1 400px;min-width:280px">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop" alt="Product large image" style="width:100%;border-radius:10px;object-fit:cover">
-              <div style="display:flex;gap:8px;margin-top:10px;overflow:auto">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=200&auto=format&fit=crop" alt="thumb" style="width:80px;height:60px;object-fit:cover;border-radius:6px">
-                <img loading="lazy" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=200&auto=format&fit=crop" alt="thumb" style="width:80px;height:60px;object-fit:cover;border-radius:6px">
-              </div>
-            </div>
+        <article class="card" role="article" aria-labelledby="pc8">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Supermarket equipment">
+          <h4 id="pc8">Supermarket Equipment</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Display cases, trolleys, scales, and POS systems.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
-            <div style="flex:1 1 340px;min-width:260px;display:flex;flex-direction:column">
-              <h4>Model: ProChef 1200 — Heavy Duty Range</h4>
-              <p style="color:var(--muted);font-family:'Cairo',sans-serif">Commercial 6-burner range with oven, stainless steel construction and high-efficiency burners. Ideal for medium to large restaurant kitchens.</p>
-
-              <table style="width:100%;margin-top:12px;border-collapse:collapse">
-                <tr><td style="padding:8px;border-top:1px solid #f2f2f2">Dimensions</td><td style="padding:8px;border-top:1px solid #f2f2f2">1200mm x 800mm x 900mm</td></tr>
-                <tr><td style="padding:8px;border-top:1px solid #f2f2f2">Material</td><td style="padding:8px;border-top:1px solid #f2f2f2">304 Stainless Steel</td></tr>
-                <tr><td style="padding:8px;border-top:1px solid #f2f2f2">Power</td><td style="padding:8px;border-top:1px solid #f2f2f2">Gas / LPG — 24kW</td></tr>
-                <tr><td style="padding:8px;border-top:1px solid #f2f2f2">Weight</td><td style="padding:8px;border-top:1px solid #f2f2f2">145kg</td></tr>
-              </table>
-
-              <div style="margin-top:auto;display:flex;gap:10px">
-                <a class="btn" href="#contact">Request Quote</a>
-                <a class="btn secondary" href="#">Download Spec Sheet (PDF)</a>
-                <a class="btn" href="https://wa.me/971524852401">Enquire via WhatsApp</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <article class="card" role="article" aria-labelledby="pc9">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Fabrication services">
+          <h4 id="pc9">Fabrication</h4>
+          <p style="color:var(--muted);font-family:'Cairo',sans-serif">Custom stainless steel fabrication and commercial kitchen setups.</p>
+          <div style="margin-top:auto"><a class="btn secondary" href="#">View Products</a></div>
+        </article>
 
       </div>
-    </section>
+      <button class="slider-btn next">&#10095;</button>
+    </div>
+
+  </div>
+</section>
+
+
 
     <!-- PROJECTS -->
     <section id="projects">
@@ -285,7 +783,7 @@
         <h2 class="section-title">Projects & Case Studies</h2>
         <div class="projects">
           <article class="project-card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1541542684-1d8a9b0b9a52?q=80&w=1600&auto=format&fit=crop" alt="Hotel kitchen installation">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Hotel kitchen installation">
             <div class="meta">
               <strong>Hotel Grand — Central Kitchen</strong>
               <p style="color:var(--muted);font-family:'Cairo',sans-serif">Turnkey design and installation for a 200-cover hotel kitchen. Client: Hotel Grand</p>
@@ -409,9 +907,9 @@
   </footer>
 
   <!-- Floating WhatsApp -->
-  <div class="floating-whatsapp">
-    <a href="https://wa.me/971524852401" aria-label="WhatsApp Quick Chat">💬 WhatsApp</a>
-  </div>
+  <a href="https://wa.me/9715555550" target="_blank" id="whatsapp-button">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
 
   <!-- Scripts: small interactive behaviours (defer) -->
   <script>
@@ -466,5 +964,47 @@
     }]
   }
   </script>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('show');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('show');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+</script>
+<script>
+const track = document.querySelector('.slider-track');
+const prev = document.querySelector('.slider-btn.prev');
+const next = document.querySelector('.slider-btn.next');
+
+const cards = track.querySelectorAll('.card');
+const cardWidth = cards[0].offsetWidth + 18; // width + gap
+let index = 0;
+const maxIndex = cards.length - 3; // 3 cards visible at a time
+
+next.addEventListener('click', () => {
+  index++;
+  if(index > maxIndex) index = maxIndex;
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+});
+
+prev.addEventListener('click', () => {
+  index--;
+  if(index < 0) index = 0;
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+});
+</script>
+
+
+
 </body>
 </html>
