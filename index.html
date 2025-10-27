@@ -199,11 +199,22 @@
   align-items: start;
 }
 
+/* Place image on right */
+.who-text {
+  order: 1;
+}
+
+.who-image {
+  order: 2;
+  text-align: center;
+}
+
 .who-image img {
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+  margin-bottom: 15px;
 }
 
 .who-text p {
@@ -380,6 +391,137 @@
     .project-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(33,36,39,0.05)}
     .project-card img{width:100%;height:220px;object-fit:cover}
     .project-card .meta{padding:12px}
+
+
+/* BRANCHES SECTION */
+#branches {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+#branches .section-title {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--heading, #222);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.branch-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(33,36,39,0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.branch-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(33,36,39,0.08);
+}
+
+.branch-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.branch-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 15px 20px 5px 20px;
+  font-size: 1.3rem;
+  color: var(--heading, #222);
+}
+
+.branch-card .timing {
+  font-family: 'Cairo', sans-serif;
+  color: var(--muted, #555);
+  margin: 0 20px 15px 20px;
+  font-size: 0.95rem;
+}
+
+.branch-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 20px 20px;
+  margin-top: auto;
+}
+
+.branch-buttons .btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.branch-buttons .contact {
+  background-color: #007BFF;
+  color: white;
+}
+
+.branch-buttons .contact:hover {
+  background-color: #0056b3;
+}
+
+.branch-buttons .map {
+  background-color: #28a745;
+  color: white;
+}
+
+.branch-buttons .map:hover {
+  background-color: #1e7e34;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .branch-card img {
+    height: 200px;
+  }
+  .branch-card h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .branches-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .branch-card img {
+    height: 180px;
+  }
+  .branch-card h4 {
+    font-size: 1.1rem;
+  }
+  .branch-card .timing {
+    font-size: 0.9rem;
+  }
+  .branch-buttons .btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+
 
     /* FAQ */
     .accordion{background:white;border-radius:10px;padding:10px;box-shadow:0 8px 20px rgba(33,36,39,0.04)}
@@ -670,9 +812,6 @@
   <div class="container">
     <h2 class="section-title center">Who We Are</h2>
     <div class="who-grid">
-      <div class="who-image">
-        <img src="Mariot Who We Are.png" alt="Who We Are Mariot Kitchen">
-      </div>
       <div class="who-text">
         <p>
           Mariot Kitchen Equipment is a leading supplier of premium commercial kitchen and catering solutions in the UAE. With over 18 years of experience, we deliver turnkey projects from design, supply, to installation, ensuring quality and efficiency for hotels, restaurants, and cafés.
@@ -696,6 +835,11 @@
           </div>
         </div>
       </div>
+
+      <div class="who-image">
+        <img src="Mariot why us.png" alt="Who We Are Mariot Kitchen">
+        <p>Our team of experts works closely with clients to understand their unique requirements, providing tailored solutions backed by industry-leading brands and exceptional service.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -704,10 +848,12 @@
 
 
 
+
     <!-- PRODUCT CATEGORIES -->
 <section id="products">
   <div class="container">
-    <h2 class="section-title">Product Categories</h2>
+<h2 class="section-title" style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">Product Categories</h2>
+
     
     <div class="slider-wrapper">
       <button class="slider-btn prev">&#10094;</button>
@@ -780,7 +926,7 @@
     <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
-        <h2 class="section-title">Projects & Case Studies</h2>
+        <h2 class="section-title" style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">Our Projects</h2>
         <div class="projects">
           <article class="project-card">
             <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Hotel kitchen installation">
@@ -809,10 +955,89 @@
       </div>
     </section>
 
+    <!-- OUR BRANCHES SECTION -->
+<section id="branches">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center; font-size:2.5rem; margin-bottom:40px;">
+      Our Branches
+    </h2>
+    <div class="branches-grid">
+
+      <!-- Dubai Branch -->
+      <article class="branch-card" role="article" aria-labelledby="dubai1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1582719478191-7e4de71b64c1?q=80&w=1200&auto=format&fit=crop" alt="Dubai Branch">
+        <h4 id="dubai1">Dubai Branch</h4>
+        <p class="timing">Mon-Sat: 9:00 AM - 7:00 PM</p>
+        <div class="branch-buttons">
+          <a class="btn contact" href="tel:+971123456789">Contact</a>
+          <a class="btn map" href="#">Map</a>
+        </div>
+      </article>
+
+      <!-- Al Ain Branch -->
+      <article class="branch-card" role="article" aria-labelledby="alain1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1571091718767-6ab5dbf09c37?q=80&w=1200&auto=format&fit=crop" alt="Al Ain Branch">
+        <h4 id="alain1">Al Ain Branch</h4>
+        <p class="timing">Mon-Sat: 8:00 AM - 6:00 PM</p>
+        <div class="branch-buttons">
+          <a class="btn contact" href="tel:+971123456780">Contact</a>
+          <a class="btn map" href="#">Map</a>
+        </div>
+      </article>
+
+      <!-- Sharjah Branch 1 -->
+      <article class="branch-card" role="article" aria-labelledby="sharjah1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1521305916504-4a1121188589?q=80&w=1200&auto=format&fit=crop" alt="Sharjah Branch 1">
+        <h4 id="sharjah1">Sharjah Branch 1</h4>
+        <p class="timing">Mon-Sat: 9:00 AM - 6:00 PM</p>
+        <div class="branch-buttons">
+          <a class="btn contact" href="tel:+971123456781">Contact</a>
+          <a class="btn map" href="#">Map</a>
+        </div>
+      </article>
+
+      <!-- Sharjah Branch 2 -->
+      <article class="branch-card" role="article" aria-labelledby="sharjah2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Sharjah Branch 2">
+        <h4 id="sharjah2">Sharjah Branch 2</h4>
+        <p class="timing">Mon-Sat: 10:00 AM - 7:00 PM</p>
+        <div class="branch-buttons">
+          <a class="btn contact" href="tel:+971123456782">Contact</a>
+          <a class="btn map" href="#">Map</a>
+        </div>
+      </article>
+
+      <!-- Abu Dhabi Branch 1 -->
+      <article class="branch-card" role="article" aria-labelledby="abudhabi1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="Abu Dhabi Branch 1">
+        <h4 id="abudhabi1">Abu Dhabi Branch 1</h4>
+        <p class="timing">Mon-Sat: 9:00 AM - 6:00 PM</p>
+        <div class="branch-buttons">
+          <a class="btn contact" href="tel:+971123456783">Contact</a>
+          <a class="btn map" href="#">Map</a>
+        </div>
+      </article>
+
+      <!-- Abu Dhabi Branch 2 -->
+      <article class="branch-card" role="article" aria-labelledby="abudhabi2">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1600180758895-98813c4c4d80?q=80&w=1200&auto=format&fit=crop" alt="Abu Dhabi Branch 2">
+        <h4 id="abudhabi2">Abu Dhabi Branch 2</h4>
+        <p class="timing">Mon-Sat: 10:00 AM - 7:00 PM</p>
+        <div class="branch-buttons">
+          <a class="btn contact" href="tel:+971123456784">Contact</a>
+          <a class="btn map" href="#">Map</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
     <!-- FAQ -->
     <section id="faq">
       <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="section-title" style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">FAQ's</h2>
         <div class="accordion">
           <div class="faq-item">
             <button aria-expanded="false" aria-controls="faq1"><span>Do you provide installation and commissioning?</span><span>+</span></button>
@@ -835,7 +1060,7 @@
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact & Enquiries</h2>
+        <h2 class="section-title" style="text-align: center; font-size: 2.2rem; margin-bottom: 40px;">Contact Us</h2>
         <div class="contact-grid">
           <form id="contact-form" aria-label="Contact form" onsubmit="handleContact(event)">
             <label for="name">Name</label>
